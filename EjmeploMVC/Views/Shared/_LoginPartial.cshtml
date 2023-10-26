@@ -1,0 +1,50 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+    @Html.AntiForgeryToken()
+
+<ul class="navbar-nav navbar-right">
+    <!--Opciones del ususario autenticado-->
+    <!--Definimos las opciones dado el rol del usuario-->
+    @if (User.IsInRole("Admin"))
+    {
+        //Opciones del Rol administrador
+        <li>@Html.ActionLink("Equipos", "Index", "Equipoes", new { area = "" }, new { @class = "nav-link" })</li>
+        <li>@Html.ActionLink("Proyectos", "Index", "Proyectoes", new { area = "" }, new { @class = "nav-link" })</li>
+        <li>@Html.ActionLink("Tareas", "Index", "Tareas", new { area = "" }, new { @class = "nav-link" })</li>
+        <li>@Html.ActionLink("Asignaciones", "Index", "Asignacions", new { area = "" }, new { @class = "nav-link" })</li>
+        <li>@Html.ActionLink("Miembros", "Index", "Miembroes", new { area = "" }, new { @class = "nav-link" })</li>
+        <li>@Html.ActionLink("Usuarios", "Index", "Usuarios", new { area = "" }, new { @class = "nav-link" })</li>
+        <li>@Html.ActionLink("Comentarios", "Index", "Comentarios", new { area = "" }, new { @class = "nav-link" })</li>
+        <li>@Html.ActionLink("Valoraciones", "Index", "Valoracions", new { area = "" }, new { @class = "nav-link" })</li>
+
+    }
+    @if (User.IsInRole("Miembro"))
+    {
+        //Opciones del Rol miembro
+        <li>@Html.ActionLink("Tareas", "Index", "Tareas", new { area = "" }, new { @class = "nav-link" })</li>
+
+    }
+    @if (User.IsInRole("Usuario"))
+    {
+        //Opciones del Rol Ususario
+        <li>@Html.ActionLink("Comentarios", "Index", "Comentarios", new { area = "" }, new { @class = "nav-link" })</li>
+        <li>@Html.ActionLink("Valoraciones", "Index", "Valoracions", new { area = "" }, new { @class = "nav-link" })</li>
+    }
+
+    <li>
+        @Html.ActionLink("Hola " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "nav-link" })
+    </li>
+    <li><a class="nav-link" href="javascript:document.getElementById('logoutForm').submit()">Cerrar sesión</a></li>
+</ul>
+    }
+}
+else
+{
+    <ul class="navbar-nav navbar-right">
+       
+        <li>@Html.ActionLink("Iniciar sesión", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class="nav-link" })</li>
+    </ul>
+}

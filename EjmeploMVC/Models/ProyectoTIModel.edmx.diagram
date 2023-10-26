@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0b0277dc359a4cb0b0796218719f1156" Name="Diagram1" ZoomLevel="132" >
+        <EntityTypeShape EntityType="ProyectoTIModel.Equipo" Width="1.5" PointX="2.125" PointY="0.875" FillColor="128, 255, 128" />
+        <EntityTypeShape EntityType="ProyectoTIModel.Miembro" Width="1.5" PointX="1.875" PointY="3.125" FillColor="192, 0, 192" />
+        <AssociationConnector Association="ProyectoTIModel.EquipoMiembro" />
+        <EntityTypeShape EntityType="ProyectoTIModel.Proyecto" Width="1.5" PointX="6.25" PointY="0.625" FillColor="255, 255, 192" />
+        <EntityTypeShape EntityType="ProyectoTIModel.Tarea" Width="1.5" PointX="6.375" PointY="3.625" FillColor="255, 224, 192" />
+        <AssociationConnector Association="ProyectoTIModel.ProyectoTarea" />
+        <EntityTypeShape EntityType="ProyectoTIModel.Asignacion" Width="1.5" PointX="4" PointY="3.625" FillColor="192, 255, 255" />
+        <AssociationConnector Association="ProyectoTIModel.MiembroAsignacion" />
+        <AssociationConnector Association="ProyectoTIModel.TareaAsignacion" />
+        <EntityTypeShape EntityType="ProyectoTIModel.Comentario" Width="1.5" PointX="8.875" PointY="3.5" FillColor="192, 255, 255" />
+        <EntityTypeShape EntityType="ProyectoTIModel.Valoracion" Width="1.5" PointX="8.875" PointY="6" FillColor="192, 255, 255" />
+        <AssociationConnector Association="ProyectoTIModel.TareaComentario" />
+        <AssociationConnector Association="ProyectoTIModel.TareaValoracion" />
+        <EntityTypeShape EntityType="ProyectoTIModel.Usuario" Width="1.5" PointX="11.875" PointY="4.75" />
+        <AssociationConnector Association="ProyectoTIModel.UsuarioComentario" />
+        <AssociationConnector Association="ProyectoTIModel.UsuarioValoracion" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
