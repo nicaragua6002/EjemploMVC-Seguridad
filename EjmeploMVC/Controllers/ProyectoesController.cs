@@ -113,7 +113,8 @@ namespace EjmeploMVC.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Proyecto proyecto = db.Proyectos.Find(id);
-            db.Proyectos.Remove(proyecto);
+            // db.Proyectos.Remove(proyecto);
+            proyecto.Estado = "E";
             db.SaveChanges();
             return RedirectToAction("Index");
         }
